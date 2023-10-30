@@ -1,4 +1,12 @@
 apiVersion: apps/v1
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: demos
+  labels:
+    name: test
+---
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: echo-frontend-{{ .Values.color }}
