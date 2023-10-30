@@ -22,7 +22,7 @@ Leave the webserver running and select `Window -> New Terminal` to make a second
 
 In the second terminal session, use the curl command to send an HTTP GET request to the webserver as follows.
 ```bash
-curl http://localhost:8080
+curl http://127.0.0.1:8080
 ```
 
 As you do so, observe that the recorded value of **hostname** is synonymous with the value of **ec2IP** in this execution context.
@@ -56,12 +56,12 @@ docker ps                                                              # ... now
 
 Invoke the webserver from inside the container.
 ```bash
-docker exec -it ${container_id} curl http://localhost:80
+docker exec -it ${container_id} curl http://127.0.0.1:80
 ```
 
 Invoke the webserver from outside the container.
 ```bash
-curl http://localhost:8081
+curl http://127.0.0.1:8081
 ```
 
 The response for the two previous `curl` requests are identical because it is the same operation, only the perspective is different.
